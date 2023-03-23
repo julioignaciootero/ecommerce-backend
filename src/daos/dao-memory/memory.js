@@ -1,16 +1,16 @@
-import ProductsDTO, { asDto } from "../../dto/productos.js";
+import { asProdDto } from "../../dto/productos.js";
 
 export default class Memory {
   constructor() {
-    this.products = [];
+    this.productos = [];
   }
 
   async save(obj) {
-    this.products.push(obj);
+    this.productos.push(obj);
     return obj;
   }
 
   async getAll() {
-    return asDto(this.products);
+    return asDto(this.productos);
   }
 }

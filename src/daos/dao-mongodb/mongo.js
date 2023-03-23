@@ -1,19 +1,23 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
-import ProductsDTO, { asDto } from "../../dto/productos.js";
+import { asProdDto } from "../../dto/productos.js";
+import { asCarritosDto } from "../../dto/carritos.js";
+import { prodcutosSchema } from "../../models/productos.js";
+import { carritoSchema } from "../../models/carritos.js";
 
 export default class MongoDB {
-  static instance;
-
-  constructor(collection, schema) {
-    this.collection = mongoose.model(collection, schema);
-    if (!MongoDB.instance) {
-      this.initDB = mongoose.connect(process.env.MONGOURL);
-      MongoDB.instance = this;
-      console.log("Conectado a MongoDB!");
-    } else {
-      return MongoDB.instance;
+  constructor(collection) {
+    this.collection = collection;
+    switch (collection) {
+      case "productos":
+        this.model = mongoose.model(collection, prodcutosSchema);
+        break;
+      case "carritos":
+        this.model = mongoose.model(collection, carritoSchema);
+        break;
+      default:
+        break;
     }
   }
 
@@ -23,7 +27,7 @@ export default class MongoDB {
 
   async save(doc) {
     try {
-      const document = await this.collection.create(doc);
+      const document = await this.model.create(doc);
       return document;
     } catch (error) {
       console.log(error);
@@ -32,37 +36,19 @@ export default class MongoDB {
 
   async getAll() {
     try {
-      const docs = await this.collection.find({});
-      return asDto(docs);
+      const docs = await this.model.find({});
+      console.log(docs);
+      switch (this.collection) {
+        case "productos":
+          return asProdDto(docs);
+
+        case "carritos":
+          return asCarritosDto(docs);
+        default:
+          break;
+      }
     } catch (error) {
       console.log(error);
     }
   }
 }
-
-// // export const initMongoDB = async () => {
-// //     try {
-// //         await mongoose.connect(process.env.MONGOURL);
-// //         console.log('Conectado a Mongo!');
-// //     } catch (error) {
-// //         console.log(error);
-// //     }
-// // };
-
-// export const save = async (doc) => {
-//   try {
-//     const document = await prodcutModel.create(doc);
-//     return document;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// export const getAll = async () => {
-//   try {
-//     const docs = await ProductsModel.find({});
-//     return docs;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };

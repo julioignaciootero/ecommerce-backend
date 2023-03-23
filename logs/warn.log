@@ -1,0 +1,15 @@
+[31merror[39m || getAllcarritos is not defined || Mar-23-2023 13:34:34
+[31merror[39m || getAllcarritos is not defined || Mar-23-2023 13:34:36
+[31merror[39m || prods is not defined || Mar-23-2023 13:41:18
+[31merror[39m || Cannot destructure property 'prods' of 'undefined' as it is undefined. || Mar-23-2023 19:15:00
+[31merror[39m || Cannot destructure property 'id' of 'undefined' as it is undefined. || Mar-23-2023 19:34:59
+[31merror[39m || Cannot destructure property 'id' of 'undefined' as it is undefined. || Mar-23-2023 19:36:04
+[31merror[39m || Cannot destructure property 'id' of 'undefined' as it is undefined. || Mar-23-2023 19:37:18
+[31merror[39m || Cannot destructure property 'id' of 'undefined' as it is undefined. || Mar-23-2023 19:38:46
+[31merror[39m || Cannot destructure property 'id' of 'undefined' as it is undefined. || Mar-23-2023 19:38:48
+[31merror[39m || Cannot destructure property 'c' of 'undefined' as it is undefined. || Mar-23-2023 19:39:07
+[31merror[39m || Cannot destructure property 'id' of 'undefined' as it is undefined. || Mar-23-2023 19:39:25
+[31merror[39m || Cannot destructure property 'carritos' of 'undefined' as it is undefined. || Mar-23-2023 19:40:11
+[31merror[39m || Cannot destructure property 'carritos' of 'undefined' as it is undefined. || Mar-23-2023 19:40:32
+[33mwarn[39m || Ruta desconocida /api/carrito || Mar-23-2023 19:53:54
+[31merror[39m || carritoNuevo is not defined || Mar-23-2023 19:53:57

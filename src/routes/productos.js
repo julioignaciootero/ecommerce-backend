@@ -1,28 +1,22 @@
 // import express, { Request, Response, NextFunction } from "express";
-import express from 'express'
+import express from "express";
 import {
   checkBodyProducto,
-  createProdcuto,
   deleteProdcuto,
   modificarProducto,
   getProducto,
-  getAllProductos
-} from '../controllers/productos.js'
-const router = express.Router()
+  saveController,
+  getAllController,
+} from "../controllers/productos.js";
+const router = express.Router();
 
+// router.post("/add", saveController);
+// router.get("/list", getAllController);
 
-import { saveController, getAllController } from "../controllers/productos.js";
+router.post("/", checkBodyProducto, saveController);
+router.delete("/:id", deleteProdcuto);
+router.put("/:id", checkBodyProducto, modificarProducto);
+router.get("/:id", getProducto);
+router.get("/", getAllController);
 
-
-
-router.post('/add', saveController);
-router.get('/list', getAllController);
-
-router.post('/', checkBodyProducto, createProdcuto);
-router.delete('/:id', deleteProdcuto);
-router.put('/:id', checkBodyProducto, modificarProducto);
-router.get('/:id', getProducto);
-router.get('/', getAllProductos);
-
-
-export default router 
+export default router;

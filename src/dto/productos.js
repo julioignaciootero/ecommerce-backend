@@ -1,12 +1,15 @@
-export default class ProductsDTO {
-  constructor({ title, price, url }) {
-    this.title = title;
-    this.price = price;
-    this.url = url;
+export default class productosDTO {
+  constructor({ nombre, descripcion, codigo, foto, precio, stock }) {
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.codigo = codigo;
+    this.foto = foto;
+    this.precio = precio;
+    this.stock = stock;
   }
 }
 
-export function asDto(prods) {
-  if (Array.isArray(prods)) return prods.map((p) => new ProductsDTO(p));
-  else return new ProductsDTO(prods);
+export function asProdDto(prods) {
+  if (Array.isArray(prods)) return prods.map((p) => new productosDTO(p));
+  else return new productosDTO(prods);
 }

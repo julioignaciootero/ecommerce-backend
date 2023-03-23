@@ -1,9 +1,9 @@
-import { asDto } from "../../dto/productos.js";
-import { getDao } from "../daos.js";
+import { asProdDto } from "../../dto/productos.js";
+import { getProdDao } from "../daos.js";
 
-export default class ProductsRepository {
+export default class productosRepository {
   constructor() {
-    this.dao = getDao();
+    this.dao = getProdDao();
   }
 
   async save(prod) {
@@ -12,8 +12,9 @@ export default class ProductsRepository {
   }
 
   async getAll() {
-    const products = await this.dao.getAll();
-    const prodsDTO = asDto(products);
+    const productos = await this.dao.getAll();
+    console.log(productos);
+    const prodsDTO = asProdDto(productos);
     return prodsDTO;
   }
 }
