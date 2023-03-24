@@ -12,3 +12,38 @@
 [31merror[39m || Cannot destructure property 'carritos' of 'undefined' as it is undefined. || Mar-23-2023 19:40:11
 [31merror[39m || Cannot destructure property 'carritos' of 'undefined' as it is undefined. || Mar-23-2023 19:40:32
 [31merror[39m || carritoNuevo is not defined || Mar-23-2023 19:53:57
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio1" } || Mar-23-2023 20:16:50
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio1" } || Mar-23-2023 20:19:53
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio1" } || Mar-23-2023 20:21:56
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio1" } || Mar-23-2023 20:23:56
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julioa1" } || Mar-23-2023 20:29:40
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:30:15
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:32:45
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:34:21
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:36:15
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:36:57
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:40:33
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:40:54
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepeasdasdasdasdasdasd" } || Mar-23-2023 20:43:15
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:45:03
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:55:23
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:56:37
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:57:55
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:58:33
+[31merror[39m || E11000 duplicate key error collection: test.users2 index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 20:59:01
+[31merror[39m || E11000 duplicate key error collection: test.users4 index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 21:00:22
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 21:00:46
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 21:01:27
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 21:02:42
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 21:02:48
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 21:03:20
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 21:03:24
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "Pepe" } || Mar-23-2023 21:03:27
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio" } || Mar-23-2023 21:03:32
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio" } || Mar-23-2023 21:06:06
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio" } || Mar-23-2023 21:08:06
+[31merror[39m || No recipients defined || Mar-23-2023 21:08:08
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio" } || Mar-23-2023 21:09:25
+[31merror[39m || No recipients defined || Mar-23-2023 21:09:26
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio" } || Mar-23-2023 21:09:38
+[31merror[39m || No recipients defined || Mar-23-2023 21:09:38
