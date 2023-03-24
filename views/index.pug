@@ -1,0 +1,75 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width initial-scale=1.0")
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous")
+        title='PUG'
+
+    body
+        //- div(class="container mx-auto")
+        //-     h1(class="text-primary") Ingresar producto
+
+        //-     form(action="/productos" method="post")
+        //-         div(class="form-group row")
+        //-             label(for="title" class="col-md-4 col-form-label") Producto:
+        //-             div(class="col-md-8 p-1")
+        //-                 input(type="text" id="title" name="title")
+
+        //-         div(class="form-group row")
+        //-             label(for="price" class="col-md-4 col-form-label") Precio:
+        //-             div(class="col-md-8 p-1")
+        //-                 input(type="number" id="price" name="price")
+
+        //-         div(class="form-group row")
+        //-             label(for="thumbnail" class="col-md-4 col-form-label") Imagen: 
+        //-             div(class="col-md-8 p-1")
+        //-                 input(type="text" id="thumbnail" name="thumbnail")
+
+        //-         div(class="form-group row mt-2")
+        //-             div(class="col-md-10")
+        //-                 input(id="btnCargar" value="Cargar producto" class="btn btn-primary" type="submit")
+
+        //-                 div(class='container')
+        //-     h1(class="text-primary")= titulo
+
+        //-     table(id="tablita")
+        //-         thead
+        //-             tr
+        //-                 th(scope="col") ID
+        //-                 th(scope="col") Nombre
+        //-                 th(scope="col") Precio
+        //-                 th(scope="col") Imagen
+
+        //-         tbody
+        //-             //- each producto in productos 
+        //-             //-     tr
+        //-             //-         td= (producto.id)
+        //-             //-         td= (producto.title)
+        //-             //-         td= (producto.price)
+        //-             //-         td 
+        //-             //-             img(src= producto.thumbnail width="100px" )
+
+
+    h2(class="tituloCentrado separacion") Centro de Mensajes
+    div(class="container-fluid Centrado")
+        div(class="row")
+            div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12")
+                form(action="" method="" class="" id="chatForm")
+                    div(class="form-floating mb-3")  
+                        input(type="email" class="form-control" id="email" placeholder="Email" name="email" required)
+                        label(for="foto") Email
+                    div(class="form-floating mb-3" id="chat")
+                    div(class="row")
+                        div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6")
+                            div(class="form-floating mb-3")  
+                                input(type="text" class="form-control" id="message" placeholder="Mensaje" name="menssage" required)
+                                label(for="mesage" id="message") Mensaje
+                        div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6")
+                            div(class="form-floating mb-3")
+                                input(class="btn btn-info" type="submit" value="Enviar" id="btnEnviar")
+                                
+
+    div(class="container-fluid Centrado" id="mensajitos")
+    script(src="/socket.io/socket.io.js")
+    script(src="/js/client.js")

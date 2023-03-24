@@ -67,6 +67,11 @@ export const asignarCarrito = async (req, res) => {
 export const finalizarCompra = async (req, res) => {
   try {
     const { username, id_carrito } = req.body;
+    console.log(id_carrito + " " + username);
+    if (!id_carrito || !username) {
+      return res.status(400).json({ ok: false, msg: "Datos incompletos" });
+    }
+
     const user = await UserModel.findOne({ username: username });
     if (user) {
       const upd = await UserModel.findOneAndUpdate(
@@ -85,6 +90,7 @@ export const finalizarCompra = async (req, res) => {
         });
 
         const car = await carritoModel.findById({ _id: id_carrito });
+        console.log(car);
         const envio = sendMailCompraFinalizada(user, car);
         sendWS(user, car);
       } else {
