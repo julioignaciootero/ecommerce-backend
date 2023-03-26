@@ -1,6 +1,6 @@
 components:
   schema:
-    productos:
+    Productos:
       New:
         type: object
         properties:

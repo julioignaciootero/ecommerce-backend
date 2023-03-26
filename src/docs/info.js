@@ -12,6 +12,7 @@ export const info = {
       },
       {
         url: "ecommerce-backend-production-ab89.up.railway.app",
+        description: "Produccion",
       },
     ],
   },
