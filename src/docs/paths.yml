@@ -3,7 +3,7 @@ paths:
     post:
       tags:
         - Productos
-      summary: CRUD de productos de Ecommerce
+      summary: Alta de producto
       parameters:
       requestBody:
         content:
@@ -21,3 +21,14 @@ paths:
         500:
           description: error del servidor.
           $ref: "#/components/schema/Productos/NotFound"
+    get:
+      tags:
+        - Productos
+      summary: Obtener todos los productos
+      responses:
+        200:
+          description: Listado de productos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Productos/todos"

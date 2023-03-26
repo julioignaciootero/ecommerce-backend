@@ -36,3 +36,28 @@ components:
       NotFound:
         type: string
         description: error en el servidor
+      todos:
+      type: array
+      items:
+        properties:
+          id:
+            type: string
+            description: Id del producto
+          nombre:
+            type: string
+            description: Nombre del producto.
+          descripcion:
+            type: string
+            description: Descripcion del producto.
+          codigo:
+            type: number
+            description: Codigo del producto.
+          foto:
+            type: string
+            description: Url de la imagen del producto.
+          precio:
+            type: number
+            description: Precio Unitario.
+          stock:
+            type: number
+            description: Stock disponible.
