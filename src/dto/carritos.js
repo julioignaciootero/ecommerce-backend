@@ -1,3 +1,4 @@
+//DTO de carritos con el array de productos asignados
 export default class carritosDTO {
   constructor({ _id, productos }) {
     this.id = _id;

@@ -26,18 +26,20 @@ async function postData(url = "", data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
+//Instancio IO de socket
 const socket = io();
 
 socket.emit("allProducts");
 
+//Al enviar un mensaje nuevo
 socket.on("mensajenuevo", (msg) => {
   const mensaje = document.createElement("p");
   mensaje.innerText = msg.email + ": " + msg.message;
   mensajitos.appendChild(mensaje);
 });
 
+//Al crear un producto
 socket.on("producto", (prod) => {
-  console.log(prod);
   const fila = document.createElement("tr");
   fila.innerHTML = `<td>${prod.id}</td><td>${prod.title}</td> <td>${prod.price}</td> 
     <td> <img src="${prod.thumbnail}" width="100px"</td>`;
@@ -54,10 +56,8 @@ btn.addEventListener("click", async (e) => {
       price: precio.value,
       thumbnail: url.value,
     };
-    console.log(prod);
-    res = await postData("http://localhost:8080/productos", prod);
 
-    console.log(response);
+    res = await postData("http://localhost:8080/productos", prod);
   } catch (error) {
     console.log(error);
   }
@@ -71,7 +71,7 @@ btnEnviar.addEventListener("click", async (e) => {
       email: emailInput.value,
       message: msgInput.value,
     };
-    console.log("emit enviarmensaje");
+
     socket.emit("enviarmensaje", mensaje);
   } catch (error) {}
 });

@@ -3,25 +3,26 @@ import session from "express-session";
 import passport from "passport";
 import MongoStore from "connect-mongo";
 import dotenv from "dotenv";
-import { initDB } from "./db/db.js";
-dotenv.config();
-import { fileURLToPath } from "url";
 import path from "path";
-import minimist from "minimist";
 import miRouter from "./routes/index.js";
 import http from "http";
+import { initDB } from "./db/db.js";
 import { initWsServer } from "../src/services/socket.js";
 import { loginFunction, signUpFunction } from "./services/auth.js";
 import { logger } from "./config/logs.js";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+dotenv.config();
 
+//Creacion y configuracion del Servidor
 const app = express();
 const myHttpServer = http.Server(app);
 app.use(express.json());
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 await initDB();
 
+//Ruta de vistas
 const viewsFolderPath = path.resolve(__dirname, "../views");
 app.set("views", viewsFolderPath);
 app.set("view engine", "pug");
@@ -29,7 +30,6 @@ app.set("view engine", "pug");
 initWsServer(myHttpServer);
 
 const ttlSeconds = 180;
-
 const StoreOptions = {
   store: MongoStore.create({
     mongoUrl: process.env.MONGO_URL,

@@ -1,6 +1,7 @@
 import { asCarritosDto } from "../../dto/carritos.js";
 import { getCarritoDao } from "../daos.js";
 
+//Repository de carritos
 export default class carritosRepository {
   constructor() {
     this.dao = getCarritoDao();

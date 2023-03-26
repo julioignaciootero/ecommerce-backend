@@ -3,12 +3,14 @@ import { Strategy as localStrategy } from "passport-local";
 import { UserModel } from "../models/user.js";
 import { logger } from "../config/logs.js";
 
+//Opciones de estrategia
 const strategyOptions = {
   usernameField: "username",
   passwordField: "password",
   passReqToCallback: true,
 };
 
+//Funcion Registrar
 const signup = async (req, username, password, done) => {
   try {
     const { nombre, apellido, direccion, edad, telefono, avatar, email } =
@@ -25,7 +27,6 @@ const signup = async (req, username, password, done) => {
       avatar,
     });
     newUser.password = await newUser.encryptPassowrd(password);
-    // console.log(await newUser.save());
     await newUser.save();
 
     return done(null, newUser);
@@ -35,6 +36,7 @@ const signup = async (req, username, password, done) => {
   }
 };
 
+//Funcion login
 const login = async (req, username, password, done) => {
   const user = await UserModel.findOne({ username });
   if (!user) {

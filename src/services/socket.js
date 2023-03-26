@@ -1,16 +1,16 @@
 import { Server } from "socket.io";
+import { logger } from "../config/logs.js";
 
+//Logica de Socket pára chat
 let io;
 
 export const initWsServer = (server) => {
   io = new Server(server);
 
   io.on("connection", (socket) => {
-    console.log("Nueva conexion");
-    console.log(new Date());
+    logger.info("Nueva conexion");
 
     socket.on("enviarmensaje", async (msg) => {
-      console.log("on enviarmensaje");
       io.emit("mensajenuevo", msg);
     });
   });

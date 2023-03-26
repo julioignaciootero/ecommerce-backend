@@ -1,4 +1,4 @@
-import { asProdDto } from "../../dto/productos.js";
+//DAo para guardar informacion en Memoria
 
 export default class Memory {
   constructor() {

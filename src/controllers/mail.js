@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
-import dotenv from "dotenv";
 import { logger } from "../config/logs.js";
 
+//Funcion para enviar email, al terminar la compra
 export const sendMailCompraFinalizada = async (user, carrito) => {
   try {
     let body = `<!DOCTYPE html>
@@ -29,8 +29,7 @@ export const sendMailCompraFinalizada = async (user, carrito) => {
     body +=
       "<h1>Compra finaliza</h1><br><br><p>Detalle de la compra</p><br><br>";
     body += "<table><tr><th>Producto</th><th>Cantidad</th>";
-    console.log(carrito);
-    console.log(carrito.productos);
+
     carrito.productos.forEach((prod) => {
       body += `<tr><td>${prod.producto}</td><td>${prod.cantidad}</td></tr>`;
     });
@@ -69,6 +68,7 @@ export const sendMailCompraFinalizada = async (user, carrito) => {
   }
 };
 
+//Mail de bienvenida al usuario
 export const sendMailLogin = async (user) => {
   try {
     const transporter = nodemailer.createTransport({
@@ -89,7 +89,7 @@ export const sendMailLogin = async (user) => {
         logger.error(error);
         return false;
       } else {
-        logger.info("Email enviad");
+        logger.info("Email enviado correctamente");
       }
     });
     return true;

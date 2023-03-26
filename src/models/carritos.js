@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+//Modelo carrito
 export const carritoSchema = new mongoose.Schema(
   {
     productos: [

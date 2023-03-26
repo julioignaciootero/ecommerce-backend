@@ -1,9 +1,10 @@
 import { carritoModel } from "../models/carritos.js";
 import { prodcutModel } from "../models/productos.js";
-import mongoose, { ObjectId } from "mongoose";
 import { logger } from "../config/logs.js";
-import { saveCarrito, getAllCarritos } from "../services/carritos.js";
+import { getAllCarritos } from "../services/carritos.js";
+import mongoose from "mongoose";
 
+//Verificamos los datos del carrito
 export const checkBodyCarrito = async (req, res, next) => {
   const { productos } = req.body;
 
@@ -16,6 +17,7 @@ export const checkBodyCarrito = async (req, res, next) => {
   next();
 };
 
+//Eliminar producto segun el ID pasado por parametro
 export const deleteProducto = async (req, res) => {
   const id = req.params.id;
   const id_prod = req.params.id_prod;
@@ -35,6 +37,7 @@ export const deleteProducto = async (req, res) => {
       );
 
       if (prod) {
+        //Borramos el producto del array
         await carritoModel.findByIdAndUpdate(id, {
           $pullAll: {
             productos: [{ producto: id_prod_object }],
@@ -64,6 +67,7 @@ export const deleteProducto = async (req, res) => {
   }
 };
 
+//Crear el carrito con el array de productos
 export const createCarrito = async (req, res) => {
   try {
     const { productos } = req.body;
@@ -71,7 +75,7 @@ export const createCarrito = async (req, res) => {
     const carritoNuevo = await carritoModel.create({
       productos: productos,
     });
-    // const carritoNuevo = await saveCarrito(productos);
+
     logger.info("Carrito Creado");
     return res.status(200).json({
       ok: true,
@@ -87,6 +91,7 @@ export const createCarrito = async (req, res) => {
   }
 };
 
+//Borramos el carrito indicado en el parametro
 export const deleteCarrito = async (req, res) => {
   const { id } = req.params;
 
@@ -99,6 +104,7 @@ export const deleteCarrito = async (req, res) => {
         msg: "Carrito No encontrado",
       });
     } else {
+      //Si eliminamos el carrito es necesario volver a cargar el stock de los productos
       encontrado.productos.forEach((prod) => {
         const stockUpd = updateStock(prod.producto, prod.cantidad, true);
       });
@@ -119,6 +125,7 @@ export const deleteCarrito = async (req, res) => {
   }
 };
 
+//Funcion para actualizar Stock, al crear o borrar carrito
 export const updateStock = async (id, cantidad, sumar) => {
   try {
     const prod = await prodcutModel.findById(id);
@@ -140,6 +147,8 @@ export const updateStock = async (id, cantidad, sumar) => {
   }
 };
 
+//Agregar al carrito el prodicto.
+//El carrito llega por ID y el producto por Body
 export const agregarProducto = async (req, res) => {
   const id = req.params.id;
   if (!req.body.producto || !req.body.cantidad)
@@ -205,6 +214,7 @@ export const agregarProducto = async (req, res) => {
   }
 };
 
+//Obtener el carrito
 export const getCarrito = async (req, res) => {
   const { id } = req.params;
   try {
@@ -231,6 +241,7 @@ export const getCarrito = async (req, res) => {
   }
 };
 
+//Obtener todos los carritos
 export const getAll = async (req, res) => {
   try {
     const carritos = await getAllCarritos();

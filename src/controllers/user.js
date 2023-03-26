@@ -10,6 +10,7 @@ import { logger } from "../config/logs.js";
 
 const passportOptions = { badRequestMessage: "Datos erroneos o incompletos" };
 
+//Funcion passport para Registrarse
 export const signUp = (req, res, next) => {
   passport.authenticate("signup", passportOptions, (err, user, info) => {
     if (err) {
@@ -28,6 +29,7 @@ export const getHome = (req, res) => {
   res.status(200).json({ session: req.session });
 };
 
+//Agregar carrito al usuario, mediante ID de usuario e ID de carrito
 export const asignarCarrito = async (req, res) => {
   try {
     const { username, id_carrito } = req.body;
@@ -64,10 +66,11 @@ export const asignarCarrito = async (req, res) => {
   }
 };
 
+//Finalizar la compra. Esto pone un nuevo status al carrito, y envia correo y Wsp de confirmacion de compra
 export const finalizarCompra = async (req, res) => {
   try {
     const { username, id_carrito } = req.body;
-    console.log(id_carrito + " " + username);
+
     if (!id_carrito || !username) {
       return res.status(400).json({ ok: false, msg: "Datos incompletos" });
     }
@@ -90,8 +93,7 @@ export const finalizarCompra = async (req, res) => {
         });
 
         const car = await carritoModel.findById({ _id: id_carrito });
-        console.log(car);
-        const envio = sendMailCompraFinalizada(user, car);
+        sendMailCompraFinalizada(user, car);
         sendWS(user, car);
       } else {
         return res

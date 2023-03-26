@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+//Modelo producto
 export const prodcutosSchema = new mongoose.Schema(
   {
     nombre: { type: String, required: true },

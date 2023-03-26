@@ -14,11 +14,7 @@ const routerUser = Router();
 
 const passportOptions = { badRequestMessage: "Datos erroneso o incompletos" };
 
-routerUser.post(
-  "/signup",
-  passport.authenticate("signup", passportOptions),
-  signUp
-);
+routerUser.post("/signup", signUp);
 routerUser.post(
   "/login",
   passport.authenticate("login", passportOptions),

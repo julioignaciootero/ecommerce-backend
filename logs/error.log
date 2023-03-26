@@ -56,3 +56,4 @@
 [31merror[39m || Cannot read properties of null (reading 'productos') || Mar-24-2023 19:17:01
 [31merror[39m || Cannot read properties of null (reading 'productos') || Mar-24-2023 19:18:54
 [31merror[39m || Cannot read properties of null (reading 'productos') || Mar-24-2023 19:19:31
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio" } || Mar-26-2023 14:04:40

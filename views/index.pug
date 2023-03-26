@@ -11,45 +11,12 @@ html(lang="en")
             h1(class="text-primary") Julio
 
             form(action="/productos" method="post")
-                //- div(class="form-group row")
-                //-     label(for="title" class="col-md-4 col-form-label") Producto:
-                //-     div(class="col-md-8 p-1")
-                //-         input(type="text" id="title" name="title")
-
-                //- div(class="form-group row")
-                //-     label(for="price" class="col-md-4 col-form-label") Precio:
-                //-     div(class="col-md-8 p-1")
-                //-         input(type="number" id="price" name="price")
-
-                //- div(class="form-group row")
-                //-     label(for="thumbnail" class="col-md-4 col-form-label") Imagen: 
-                //-     div(class="col-md-8 p-1")
-                //-         input(type="text" id="thumbnail" name="thumbnail")
-
                 div(class="form-group row mt-2")
                     div(class="col-md-10")
                         input(id="btnCargar" value="Cargar producto" class="btn btn-primary" type="submit" style="visibility: hidden")
 
                         div(class='container')
             h1(class="text-primary")= titulo
-
-            //- table(id="tablita")
-            //-     thead
-            //-         tr
-            //-             th(scope="col") ID
-            //-             th(scope="col") Nombre
-            //-             th(scope="col") Precio
-            //-             th(scope="col") Imagen
-
-        //-         tbody
-        //-             //- each producto in productos 
-        //-             //-     tr
-        //-             //-         td= (producto.id)
-        //-             //-         td= (producto.title)
-        //-             //-         td= (producto.price)
-        //-             //-         td 
-        //-             //-             img(src= producto.thumbnail width="100px" )
-
 
     h2(class="tituloCentrado separacion") Centro de Mensajes
     div(class="container-fluid Centrado")

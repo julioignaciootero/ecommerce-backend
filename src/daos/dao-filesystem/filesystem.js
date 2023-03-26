@@ -1,7 +1,8 @@
 import fs from "fs";
-import { asProdDto } from "../../dto/productos.js";
+import { logger } from "../../config/logs.js";
 const pathaux = "./src/daos/dao-filesystem/productos.json";
 
+//Dao para guardar en archivo los productos
 export default class File {
   constructor(path) {
     this.path = path;
@@ -13,11 +14,11 @@ export default class File {
         const list = await fs.promises.readFile(this.path, "utf-8");
         return asDto(JSON.parse(list));
       } else {
-        console.log(`No existent file ${this.path}`);
+        logger.error(`No existent file ${this.path}`);
         return [];
       }
     } catch (error) {
-      console.log(error);
+      logger.error(error);
     }
   }
 
@@ -28,7 +29,7 @@ export default class File {
       await fs.promises.writeFile(this.path, JSON.stringify(productos));
       return obj;
     } catch (error) {
-      console.log(error);
+      logger.error(error);
     }
   }
 }

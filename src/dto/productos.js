@@ -1,3 +1,4 @@
+//DTO de productos con sus respectivos campos
 export default class productosDTO {
   constructor({ nombre, descripcion, codigo, foto, precio, stock }) {
     this.nombre = nombre;

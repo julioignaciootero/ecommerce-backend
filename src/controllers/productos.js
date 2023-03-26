@@ -1,29 +1,30 @@
 import { prodcutModel } from "../models/productos.js";
 import { logger } from "../config/logs.js";
-// import express, { Request, Response, NextFunction } from "express";
-
 import { saveProduct, getAllproductos } from "../services/productos.js";
-import { ConversationListInstance } from "twilio/lib/rest/conversations/v1/conversation.js";
 
+//Controller para guardar productos
 export const saveController = async (req, res) => {
   const { body } = req;
   try {
     const product = await saveProduct(body);
     res.json(product);
   } catch (error) {
-    console.log(error);
+    logger.error(error);
   }
 };
 
+//Controller para obtener todos los productos
 export const getAllController = async (req, res) => {
   try {
     const productos = await getAllproductos();
 
     res.json(productos);
   } catch (error) {
-    console.log(error);
+    logger.error(error);
   }
 };
+
+//Funcion para validar los campos del Body de producto
 export const checkBodyProducto = async (req, res, next) => {
   const { nombre, descripcion, codigo, foto, precio, stock } = req.body;
 
@@ -36,6 +37,7 @@ export const checkBodyProducto = async (req, res, next) => {
   next();
 };
 
+//Funcion para crear un producto
 export const createProdcuto = async (req, res) => {
   try {
     const { nombre, descripcion, codigo, foto, precio, stock } = req.body;
@@ -63,6 +65,7 @@ export const createProdcuto = async (req, res) => {
   }
 };
 
+//Borrar producto. El prodcto llega por ID
 export const deleteProdcuto = async (req, res) => {
   const { id } = req.params;
 
@@ -90,6 +93,7 @@ export const deleteProdcuto = async (req, res) => {
   }
 };
 
+//Modificar producto, llega por parametro y la informacion por Body
 export const modificarProducto = async (req, res) => {
   const { id } = req.params;
   try {
@@ -121,6 +125,7 @@ export const modificarProducto = async (req, res) => {
   }
 };
 
+//Obtener un producto segun su ID
 export const getProducto = async (req, res) => {
   const { id } = req.params;
   try {
@@ -147,6 +152,7 @@ export const getProducto = async (req, res) => {
   }
 };
 
+//Obtener todos los productos
 export const getAllProductos = async (req, res) => {
   try {
     const productos = await prodcutModel.find();

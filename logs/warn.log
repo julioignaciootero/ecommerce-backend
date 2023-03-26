@@ -237,3 +237,5 @@
 [31merror[39m || Cannot read properties of null (reading 'productos') || Mar-24-2023 19:18:54
 [31merror[39m || Cannot read properties of null (reading 'productos') || Mar-24-2023 19:19:31
 [33mwarn[39m || Ruta desconocida /productos || Mar-24-2023 19:40:51
+[31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio" } || Mar-26-2023 14:04:40
+[33mwarn[39m || Ruta desconocida /api/user/signup || Mar-26-2023 14:07:26

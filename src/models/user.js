@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
-import passport from "passport";
 
+//Modelo User
 const UserSchema = new Schema({
   username: { type: String, requried: true, unique: true },
   password: { type: String, requried: true },
@@ -27,11 +27,13 @@ const UserSchema = new Schema({
   ],
 });
 
+//Encriptamos la pass
 UserSchema.methods.encryptPassowrd = async (password) => {
   const salt = await bcrypt.genSalt(10);
   return await bcrypt.hash(password, salt);
 };
 
+//Verificar si la pass es correcta
 UserSchema.methods.matchPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
