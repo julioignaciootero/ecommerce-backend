@@ -239,3 +239,20 @@
 [33mwarn[39m || Ruta desconocida /productos || Mar-24-2023 19:40:51
 [31merror[39m || E11000 duplicate key error collection: test.users index: username_1 dup key: { username: "julio" } || Mar-26-2023 14:04:40
 [33mwarn[39m || Ruta desconocida /api/user/signup || Mar-26-2023 14:07:26
+[33mwarn[39m || Ruta desconocida /api/docs || Mar-26-2023 15:12:22
+[33mwarn[39m || Ruta desconocida /favicon.ico || Mar-26-2023 15:12:22
+[33mwarn[39m || Ruta desconocida /info || Mar-26-2023 15:47:10
+[33mwarn[39m || Ruta desconocida /info || Mar-26-2023 15:47:12
+[33mwarn[39m || Ruta desconocida /info || Mar-26-2023 15:47:13
+[33mwarn[39m || Ruta desconocida /info || Mar-26-2023 15:47:14
+[33mwarn[39m || Ruta desconocida /api/info || Mar-26-2023 15:49:32
+[33mwarn[39m || Ruta desconocida /api/info || Mar-26-2023 15:49:33
+[33mwarn[39m || Ruta desconocida /api/info || Mar-26-2023 15:49:34
+[33mwarn[39m || Ruta desconocida /api/info || Mar-26-2023 15:49:34
+[33mwarn[39m || Ruta desconocida /api/info || Mar-26-2023 15:49:34
+[33mwarn[39m || Ruta desconocida /api/info || Mar-26-2023 15:49:34
+[33mwarn[39m || Ruta desconocida /api/info || Mar-26-2023 15:51:35
+[33mwarn[39m || Ruta desconocida /randoms || Mar-26-2023 15:52:31
+[33mwarn[39m || Ruta desconocida /randoms || Mar-26-2023 15:52:32
+[33mwarn[39m || Ruta desconocida /randoms || Mar-26-2023 15:54:16
+[33mwarn[39m || Ruta desconocida /randoms || Mar-26-2023 15:55:18

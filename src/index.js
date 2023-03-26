@@ -11,6 +11,9 @@ import { initWsServer } from "../src/services/socket.js";
 import { loginFunction, signUpFunction } from "./services/auth.js";
 import { logger } from "./config/logs.js";
 import { fileURLToPath } from "url";
+import swaggerUI from "swagger-ui-express";
+import swaggerJSDoc from "swagger-jsdoc";
+import { info } from "./docs/info.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
@@ -44,6 +47,9 @@ const StoreOptions = {
   },
 };
 
+const specs = swaggerJSDoc(info);
+
+app.use("/docs", swaggerUI.serve, swaggerUI.setup(specs));
 app.use(session(StoreOptions));
 app.use(passport.initialize());
 app.use(passport.session());

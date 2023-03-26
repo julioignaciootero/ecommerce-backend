@@ -1,0 +1,23 @@
+paths:
+  /api/productos:
+    post:
+      tags:
+        - Productos
+      summary: CRUD de productos de Ecommerce
+      parameters:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/BodyNewProd"
+        required: true
+      responses:
+        200:
+          description: Producto Creado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Productos/New"
+        500:
+          description: error del servidor.
+          $ref: "#/components/schema/Productos/NotFound"

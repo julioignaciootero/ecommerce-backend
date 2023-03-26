@@ -1,0 +1,38 @@
+components:
+  parameters:
+    schemas:
+      BodyNewProd:
+        type: string
+        required:
+          - nombre
+          - descripcion
+          - codigo
+          - foto
+          - precio
+          - stock
+        properties:
+          nombre:
+            type: string
+            description: Nombre del producto.
+          descripcion:
+            type: string
+            description: Descripcion del producto.
+          codigo:
+            type: number
+            description: Codigo del producto.
+          foto:
+            type: string
+            description: Url de la imagen del producto.
+          precio:
+            type: number
+            description: Precio Unitario.
+          stock:
+            type: number
+            description: Stock disponible.
+        example:
+          nombre: Tijera
+          descripcion: Tijera para cortar papel.
+          codigo: 1234123
+          foto: http://dfsdfs.com/fsdf.jpg
+          precio: 100
+          stock: 20000
