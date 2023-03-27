@@ -43,7 +43,7 @@ Para poder levantar y correr el servidor correctamente debera crear las siguient
 
 ## Authors
 
-- [@octokatherine](https://www.linkedin.com/in/otero-julio-ignacio355b18/)
+- [@Julioignaciootero](https://www.linkedin.com/in/otero-julio-ignacio355b18/)
 
 
 ## Tecnologias Usadas
@@ -56,5 +56,4 @@ Para poder levantar y correr el servidor correctamente debera crear las siguient
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
 
