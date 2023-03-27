@@ -33,9 +33,18 @@ components:
           foto: http://dfsdfs.com/fsdf.jpg
           precio: 100
           stock: 20000
+      ProdNotFound:
+        type: string
+        description: Prod no encontrado
+      CarNotFound:
+        type: string
+        description: Carrito no encontrado
       NotFound:
         type: string
-        description: error en el servidor
+        description: No encontrado
+      ServerError:
+        type: string
+        description: Error en el servidor
       todos:
       type: array
       items:
@@ -61,3 +70,28 @@ components:
           stock:
             type: number
             description: Stock disponible.
+    Carritos:
+      CarNotFound:
+        type: string
+        description: Carrito no encontrado
+      NotFound:
+        type: string
+        description: No encontrado
+      ServerError:
+        type: string
+        description: Error en el servidor
+      todos:
+      type: array
+      items:
+        properties:
+          productos:
+            type: array
+            description: productos
+            items:
+              properties:
+                producto:
+                  type: string
+                  description: ID del producto.
+                cantidad:
+                  type: number
+                  description: Cantidad

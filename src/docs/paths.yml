@@ -10,7 +10,7 @@ paths:
           application/json:
             schema:
               $ref: "#/components/parameters/schemas/BodyNewProd"
-        required: true
+        required: false
       responses:
         200:
           description: Producto Creado
@@ -20,7 +20,7 @@ paths:
                 $ref: "#/components/schema/Productos/New"
         500:
           description: error del servidor.
-          $ref: "#/components/schema/Productos/NotFound"
+          $ref: "#/components/schema/Productos/ServerError"
     get:
       tags:
         - Productos
@@ -32,3 +32,263 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schema/Productos/todos"
+        400:
+          description: Productos no encontrados.
+          $ref: "#/components/schema/Productos/ProdNotFound"
+        500:
+          description: error del servidor.
+          $ref: "#/components/schema/Productos/ServerError"
+  /api/productos/{id}:
+    get:
+      tags:
+        - Productos
+      summary: Obtener producto por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Producto encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Productos/New"
+        400:
+          description: Productos no encontrados.
+          $ref: "#/components/schema/Productos/ProdNotFound"
+        500:
+          description: error del servidor.
+          $ref: "#/components/schema/Productos/ServerError"
+    put:
+      tags:
+        - Productos
+      summary: Modificar producto por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: id
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#components/parameters/schemas/BodyNewProd"
+        required: true
+      responses:
+        200:
+          description: Producto modificado
+        400:
+          description: ID no encontrado.
+          $ref: "#/components/schema/Productos/ProdNotFound"
+        500:
+          description: error del servidor.
+          $ref: "#/components/schema/Productos/ServerError"
+    delete:
+      tags:
+        - Productos
+      summary: Eliminar producto por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Producto eliminado
+        400:
+          description: ID no encontrado.
+          $ref: "#/components/schema/Productos/ProdNotFound"
+        500:
+          description: error del servidor.
+          $ref: "#/components/schema/Productos/ServerError"
+  /api/carritos:
+    post:
+      tags:
+        - Carritos
+      summary: Crear carrito
+      parameters:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/carritobody"
+        required: true
+      responses:
+        200:
+          description: Carrito creado
+        500:
+          description: error del servidor.
+          $ref: "#/components/schema/Productos/ServerError"
+    get:
+      tags:
+        - Carritos
+      summary: Obtener todos los carritos
+      responses:
+        200:
+          description: Listado de carritos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Carritos/todos"
+        400:
+          description: Productos no encontrados.
+          $ref: "#/components/schema/Carritos/CarNotFound"
+        500:
+          description: error del servidor.
+          $ref: "#/components/schema/Productos/ServerError"
+  /api/carritos/{id}:
+    get:
+      tags:
+        - Carritos
+      summary: Obtener carrito por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Carrito encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Carritos/New"
+        400:
+          description: Carrito no encontrados.
+          $ref: "#/components/schema/Carritos/CarNotFound"
+        500:
+          description: Error del servidor.
+          $ref: "#/components/schema/Carritos/ServerError"
+    delete:
+      tags:
+        - Carritos
+      summary: Borrar carrito por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Carrito eliminado
+        400:
+          description: Carrito no encontrados.
+          $ref: "#/components/schema/Carritos/CarNotFound"
+        500:
+          description: Error del servidor.
+          $ref: "#/components/schema/Carritos/ServerError"
+  /api/carritos/{id}/productos:
+    put:
+      tags:
+        - Carritos
+      summary: Agregar productos al carrito
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: id
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/carritobodyadd"
+        required: true
+      responses:
+        200:
+          description: Productos agregados
+        400:
+          description: Carrito no encontrados.
+          $ref: "#/components/schema/Carritos/CarNotFound"
+        500:
+          description: Error del servidor.
+          $ref: "#/components/schema/Carritos/ServerError"
+  /api/user/signup:
+    post:
+      tags:
+        - Usuario
+      summary: Registrar Usuario
+      parameters:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/userfull"
+      responses:
+        200:
+          description: Signup Ok!
+        401:
+          description: Datos erroneos o incompletos
+        500:
+          description: Error del servidor.
+          $ref: "#/components/schema/Carritos/ServerError"
+  /api/user/login:
+    post:
+      tags:
+        - Usuario
+      summary: Login de usuario
+      parameters:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/userbody"
+      responses:
+        200:
+          description: Hola {username}!
+        401:
+          description: Datos erroneos o incompletos
+        500:
+          description: Error del servidor.
+          $ref: "#/components/schema/Carritos/ServerError"
+  /api/user/asignarcarrito:
+    post:
+      tags:
+        - Usuario
+      summary: Asignar carrito al usuario
+      parameters:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/asignarcarrito"
+      responses:
+        200:
+          description: Carrito agregado correctamente
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error del servidor.
+          $ref: "#/components/schema/Carritos/ServerError"
+  /api/user/finalizarcompra:
+    post:
+      tags:
+        - Usuario
+      summary: Finalizar compra y envio de email
+      parameters:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/asignarcarrito"
+      responses:
+        200:
+          description: Compra finalizada correctamente
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error del servidor.
+          $ref: "#/components/schema/Carritos/ServerError"

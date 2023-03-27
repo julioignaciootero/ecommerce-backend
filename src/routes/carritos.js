@@ -14,7 +14,7 @@ router.post("/", checkBodyCarrito, createCarrito);
 router.delete("/:id", deleteCarrito);
 
 router.delete("/:id/productos/:id_prod", deleteProducto);
-router.post("/:id/productos", agregarProducto);
+router.put("/:id/productos", agregarProducto);
 router.get("/:id", getCarrito);
 router.get("/", getAll);
 

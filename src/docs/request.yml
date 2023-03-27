@@ -1,6 +1,76 @@
 components:
   parameters:
     schemas:
+      userfull:
+        type: string
+        required:
+          - username
+          - password
+          - admin
+          - email
+          - nombre
+          - apellido
+          - direccion
+          - edad
+          - telefono
+          - avatar
+        properties:
+          username:
+            type: string
+            description: Nombre de usuario
+          password:
+            type: string
+            description: Contraseña
+          admin:
+            type: string
+            description: Es admin?
+          email:
+            type: string
+            description: Correo electronico
+          nombre:
+            type: string
+            description: Nombre
+          apellido:
+            type: string
+            description: Apellido
+          direccion:
+            type: string
+            description: Direccion
+          edad:
+            type: number
+            description: Edad
+          telefono:
+            type: number
+            description: Telefono
+          avatar:
+            type: string
+            description: Avatar
+        example:
+          username: pepeargento
+          password: "1234"
+          admin: "false"
+          email: pepeargento@gmail.com
+          nombre: pepe
+          apellido: argento
+          direccion: flores
+          edad: 50
+          telefono: 1234432
+          avatar: pepe.jpg
+      userbody:
+        type: string
+        required:
+          - username
+          - password
+        properties:
+          username:
+            type: string
+            description: Nombre de usuario
+          password:
+            type: string
+            description: Contraseña
+        example:
+          username: pepeargento
+          password: "1234"
       BodyNewProd:
         type: string
         required:
@@ -36,3 +106,45 @@ components:
           foto: http://dfsdfs.com/fsdf.jpg
           precio: 100
           stock: 20000
+      carritobody:
+        type: string
+        required:
+          - productos
+        properties:
+          productos:
+            type: array
+            items:
+              properties:
+                producto:
+                  type: string
+                  description: Id del producto
+                cantidad:
+                  type: number
+                  description: cantidad agregada
+        example:
+          - producto: 641ceb2985b4c13d68e751f0
+            cantidad: 20
+      carritobodyadd:
+        type: string
+        properties:
+          producto:
+            type: string
+            description: Id del producto
+          cantidad:
+            type: number
+            description: cantidad agregada
+        example:
+          producto: 641ceb2985b4c13d68e751f0
+          cantidad: 22
+      asignarcarrito:
+        type: string
+        properties:
+          username:
+            type: string
+            description: Usuario
+          id_carrito:
+            type: number
+            description: ID del carrito
+        example:
+          username: julio
+          id_carrito: 641e1e23cbaafd74fe0931cd

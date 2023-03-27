@@ -257,3 +257,6 @@
 [33mwarn[39m || Ruta desconocida /randoms || Mar-26-2023 15:54:16
 [33mwarn[39m || Ruta desconocida /randoms || Mar-26-2023 15:55:18
 [33mwarn[39m || Ruta desconocida /api/docs || Mar-26-2023 18:38:07
+[33mwarn[39m || Ruta desconocida /api/carritos/641e1e23cbaafd74fe0931cd || Mar-27-2023 09:59:43
+[33mwarn[39m || Ruta desconocida /api/carritos/641e1e23cbaafd74fe0931cd || Mar-27-2023 09:59:57
+[31merror[39m || Cannot set headers after they are sent to the client || Mar-27-2023 15:02:12
