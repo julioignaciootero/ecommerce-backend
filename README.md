@@ -11,6 +11,10 @@ Consta de un CRUD de prodcutos, carritos y usuarios.
 
 [Documentation Swagger](https://ecommerce-backend-production-ab89.up.railway.app/docs/)
 
+## Vista Chat
+
+[Chat socket.io](https://ecommerce-backend-production-ab89.up.railway.app/)
+
 
 ## Installation and Run
 
