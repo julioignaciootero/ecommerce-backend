@@ -8,11 +8,10 @@ export const info = {
     },
     servers: [
       {
-        url: "ecommerce-backend-production-ab89.up.railway.app",
-        description: "Produccion",
+        url: "http://localhost:8080",
       },
       {
-        url: "http://localhost:8080",
+        url: "https://ecommerce-backend-production-ab89.up.railway.app",
       },
     ],
   },
