@@ -218,7 +218,7 @@ paths:
     post:
       tags:
         - Usuario
-      summary: Registrar Usuario
+      summary: Registrar Usuario y envio de mail Bienvenida
       requestBody:
         content:
           application/json:
